@@ -99,78 +99,85 @@ soap_mvp/
 - requests
 - python-dotenv
 
-### Как запустить проект
+## Как запустить проект
 
-1. **Установить зависимости Python**
-```bash
-py -m pip install -r requirements.txt
-```
+### 1. Установить зависимости Python
+
+    py -m pip install -r requirements.txt
+
+### 2. Установить Ollama
 
 Скачать и установить Ollama для Windows с официального сайта.
 
 После установки проверить:
-```bash
-ollama --version
-```
 
-3. Скачать локальную модель
+    ollama --version
 
-Например, используем qwen3:4b:
+### 3. Скачать локальную модель
 
-ollama pull qwen3:4b
+Например, используем:
+
+    ollama pull qwen3:4b
 
 При необходимости можно использовать более крупную модель:
 
-ollama pull qwen3:8b
-4. Настроить .env
+    ollama pull qwen3:8b
 
-Создать файл .env в корне проекта:
+### 4. Настроить `.env`
 
-OLLAMA_MODEL=qwen3:4b
-OLLAMA_BASE_URL=http://localhost:11434/api/chat
-5. Запустить Streamlit UI
-py -m streamlit run app/ui.py
+Создать файл `.env` в корне проекта:
+
+    OLLAMA_MODEL=qwen3:4b
+    OLLAMA_BASE_URL=http://localhost:11434/api/chat
+
+### 5. Запустить Streamlit UI
+
+    py -m streamlit run app/ui.py
 
 После запуска откроется веб-интерфейс в браузере.
 
-6. Запустить FastAPI backend
+### 6. Запустить FastAPI backend
 
 В отдельном терминале:
 
-py -m uvicorn app.api:app --reload
+    py -m uvicorn app.api:app --reload
 
 Проверить backend можно по адресам:
 
-Health check:
-http://127.0.0.1:8000/health
-Swagger UI:
-http://127.0.0.1:8000/docs
-API endpoints
-GET /health
+- Health check: http://127.0.0.1:8000/health  
+- Swagger UI: http://127.0.0.1:8000/docs  
+
+---
+
+## API endpoints
+
+### GET /health
 
 Проверка доступности backend-а.
 
 Ответ:
 
-{"status": "ok"}
-POST /generate
+    {"status": "ok"}
+
+### POST /generate
 
 Генерация SOAP через baseline fallback.
 
 Пример запроса:
 
-{
-  "dialog": "Пациент: Уже 3 дня температура 38, кашель..."
-}
-POST /generate_llm
+    {
+      "dialog": "Пациент: Уже 3 дня температура 38, кашель..."
+    }
+
+### POST /generate_llm
 
 Генерация SOAP через локальный LLM.
 
 Пример запроса:
 
-{
-  "dialog": "Пациент: Уже 3 дня температура 38, кашель..."
-}
+    {
+      "dialog": "Пациент: Уже 3 дня температура 38, кашель..."
+    }
 
 ## Тестовые сценарии
 
