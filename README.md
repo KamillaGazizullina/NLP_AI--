@@ -104,14 +104,14 @@ soap_mvp/
 1. **Установить зависимости Python**
 ```bash
 py -m pip install -r requirements.txt
-```bash
+```
 
 Скачать и установить Ollama для Windows с официального сайта.
 
 После установки проверить:
 ```bash
 ollama --version
-```bash
+```
 
 3. Скачать локальную модель
 
