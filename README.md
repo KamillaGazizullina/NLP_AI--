@@ -89,25 +89,28 @@ soap_mvp/
 ├── requirements.txt
 └── README.md
 ```
-Технологический стек
-Python
-Streamlit
-FastAPI
-Uvicorn
-Ollama
-Qwen (локальная модель)
-requests
-python-dotenv
-Как запустить проект
-1. Установить зависимости Python
+### Технологический стек
+- Python
+- Streamlit
+- FastAPI
+- Uvicorn
+- Ollama
+- Qwen (локальная модель)
+- requests
+- python-dotenv
+
+### Как запустить проект
+
+1. **Установить зависимости Python**
+```bash
 py -m pip install -r requirements.txt
-2. Установить Ollama
 
 Скачать и установить Ollama для Windows с официального сайта.
 
 После установки проверить:
-
+```bash
 ollama --version
+
 3. Скачать локальную модель
 
 Например, используем qwen3:4b:
