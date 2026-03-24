@@ -88,6 +88,7 @@ soap_mvp/
 ├── .gitignore
 ├── requirements.txt
 └── README.md
+```
 Технологический стек
 Python
 Streamlit
